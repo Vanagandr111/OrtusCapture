@@ -1,0 +1,18 @@
+# Пример секции роли captor для plugins/lands/roles.yml
+# Скопируйте ТОЛЬКО секцию `captor:` в нужное место roles.yml (Lands).
+
+captor:
+  name: '&6Захватчик'
+  icon: 'IRON_SWORD'
+  default:
+    - INTERACT_GENERAL
+    - INTERACT_DOOR
+    - INTERACT_TRAPDOOR
+    - INTERACT_CONTAINER
+    - INTERACT_MECHANISM
+    - INTERACT_VILLAGER
+    - ITEM_PICKUP
+    - LAND_ENTER
+
+# Остальные флаги (например BLOCK_PLACE/BLOCK_BREAK) оставьте выключенными,
+# если хотите ограничить захватчика только доступом/взаимодействием.

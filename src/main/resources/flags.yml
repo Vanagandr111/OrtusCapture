@@ -1,0 +1,176 @@
+flags:
+  mechanics:
+    collision-height-blocks: 2
+
+  types:
+    mine:
+      color: purple
+    farm:
+      color: green
+    fort:
+      color: red
+    outpost:
+      color: yellow
+
+  item-lore:
+    universal-fake-type: "Штурмовой"
+    common:
+      - "&8&m------------------------------"
+      - "&6✦ &eФлаг захвата"
+      - "&8• &7Тип: &f{type}"
+      - "&8• &7Цвет: &f{color}"
+      - "&8• &7Ставится: &fПКМ по территории Lands"
+      - "&8• &7Сохраняйте флаг до конца захвата"
+      - "&8• &7Чинить: &fShift + ПКМ (медленно)"
+      - "&8&m------------------------------"
+    bound:
+      - "&c⚑ &7Привязан к региону: &e{id}"
+      - "&7Подходит только для своей зоны"
+    typed:
+      - "&a⚑ &7Флаг захвата"
+      - "&7Подходит для регионов нужного типа"
+
+  colors:
+    red:
+      item-banner: RED_BANNER
+      fallback-cloth-block: RED_WOOL
+      health:
+        max: 240
+        damage-per-hit: 6
+        damage-per-hit-creative: 30
+        repair-per-shift-right-click: 2
+        repair-cooldown-ms: 800
+        repair-range: 2
+
+      hit-sound:
+        enabled: true
+        sound: BLOCK_ANVIL_HIT
+        volume: 1.8
+        pitch: 0.9
+        radius: 5
+
+      model:
+        summon-command: |-
+          /summon block_display ~-0.5 ~0.5 ~-0.5 {Passengers:[{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-586855529,1892847171,-1472104181,-1046561998],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;325056459,-981468458,-1577459217,-1273832799],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0.625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-664263584,-1965125175,-334471043,-1119884105],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,0.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-400262255,654076563,-1455887921,-146271759],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.125f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-761019640,-482744983,1398846917,277198913],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODg2MjEyOCwKICAicHJvZmlsZUlkIiA6ICIyNWIyMGEwZGI3MTA0NGZjODBmZjk5YjlkM2ZmNzM4MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbGl0YW41M1lUIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMwNDlkODFjMWNhMzBlZmU2NmJhZmM2YjBhZWJkZTk3NzdhYzVjNzY1NmY0NDcyZjk3ZDc2ZDJjN2U5Y2MzZDIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;2004739467,-1869223907,-629223045,-947237862],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,1.5625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1615443320,764939311,793556421,-1183657353],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTc0MTU0MDgxNjYyNCwKICAicHJvZmlsZUlkIiA6ICIyNDY1ODI2NWVjMjg0NTY4YTg3MDJkOTVlYzdlYTc4MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJBcmdvc1oxMiIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jMjQ1Yjc4NzE1NjAzZjM4M2Q2YWIwOWYyNThkNjZlNzAxOTFhY2M1ZTllNDgxNzg5ZGQ1OTEyYzZkM2FlZDdlIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[1.406087176f,0.2988730556f,0f,0.94f,-0.2988730556f,1.406087176f,0f,1.56f,0f,0f,0.0011f,0.5f,0f,0f,0f,1f],width:3,height:3.5}]}
+
+    green:
+      item-banner: GREEN_BANNER
+      fallback-cloth-block: GREEN_WOOL
+      health:
+        max: 200
+        damage-per-hit: 5
+        damage-per-hit-creative: 25
+        repair-per-shift-right-click: 2
+        repair-cooldown-ms: 800
+        repair-range: 2
+
+      hit-sound:
+        enabled: true
+        sound: BLOCK_ANVIL_HIT
+        volume: 1.8
+        pitch: 0.9
+        radius: 5
+
+      model:
+        summon-command: |-
+          /summon block_display ~-0.5 ~0.5 ~-0.5 {Passengers:[{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-1861571338,-445101007,-704450492,-244323708],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;2125390500,-836109568,-1555959513,622033296],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0.625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1212406845,1638133086,-1336973261,-1084140067],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,0.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-1244069913,799086691,1648389872,202588035],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.125f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1118297430,-1676246441,-1427331096,591465771],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODg2MjEyOCwKICAicHJvZmlsZUlkIiA6ICIyNWIyMGEwZGI3MTA0NGZjODBmZjk5YjlkM2ZmNzM4MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbGl0YW41M1lUIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMwNDlkODFjMWNhMzBlZmU2NmJhZmM2YjBhZWJkZTk3NzdhYzVjNzY1NmY0NDcyZjk3ZDc2ZDJjN2U5Y2MzZDIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;651531972,1069701737,-308444951,980913360],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,1.5625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-657905546,-1692290190,-1543288625,-1100578814],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTc0MTU0MDIwMDUxNSwKICAicHJvZmlsZUlkIiA6ICI1ZTEwYjc5MTY2ZTA0MTNkYjI2MThkMzE3MTc2M2Y4NCIsCiAgInByb2ZpbGVOYW1lIiA6ICJPTUZfQmxvY2tCdXN0ZXIiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzU1MTFkY2E3MTVhMDkzNDJlNTBjOTkyODA4YmU2MmFlMWQzMzM3MzA0Y2VkZDdjMTRjOWY3ZTY4YzA0YTgzNiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[1.406087176f,0.2988730556f,0f,0.94f,-0.2988730556f,1.406087176f,0f,1.56f,0f,0f,0.0011f,0.5f,0f,0f,0f,1f],width:3,height:3.5}]}
+
+    purple:
+      item-banner: PURPLE_BANNER
+      fallback-cloth-block: PURPLE_WOOL
+      health:
+        max: 220
+        damage-per-hit: 5
+        damage-per-hit-creative: 25
+        repair-per-shift-right-click: 2
+        repair-cooldown-ms: 800
+        repair-range: 2
+
+      hit-sound:
+        enabled: true
+        sound: BLOCK_ANVIL_HIT
+        volume: 1.8
+        pitch: 0.9
+        radius: 5
+
+      model:
+        summon-command: |-
+          /summon block_display ~-0.5 ~0.5 ~-0.5 {Passengers:[{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;936001324,1031806446,223381262,329529158],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;466889329,975824889,2045825456,-1981006700],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0.625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;712085559,-2122939435,-2093797552,814610277],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,0.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-637542223,-1418203107,-1363348808,-1016009075],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.125f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-1958321090,-1974894585,-418949940,-14808540],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODg2MjEyOCwKICAicHJvZmlsZUlkIiA6ICIyNWIyMGEwZGI3MTA0NGZjODBmZjk5YjlkM2ZmNzM4MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbGl0YW41M1lUIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMwNDlkODFjMWNhMzBlZmU2NmJhZmM2YjBhZWJkZTk3NzdhYzVjNzY1NmY0NDcyZjk3ZDc2ZDJjN2U5Y2MzZDIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1206978669,1652348922,-1193654214,746441453],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,1.5625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;812784878,-336309865,614822654,-1339824130],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTc0MTU0MTU1MzAzMiwKICAicHJvZmlsZUlkIiA6ICI2OTU3YjQyOTZiOTI0NGJkOGQzNWJiZGU4M2JiZDI3OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb2xpblBBUEEiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzZmOWQ2MzdiMTA3ZTljYmViMGFmYjM5NzdmOWFmNTA3ODc0MDMxNzk3NjhlZTkzZTE4MzMzOWMzMzZlOTFkZCIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[1.406087176f,0.2988730556f,0f,0.94f,-0.2988730556f,1.406087176f,0f,1.56f,0f,0f,0.0011f,0.5f,0f,0f,0f,1f],width:3,height:3.5}]}
+
+    blue:
+      item-banner: BLUE_BANNER
+      fallback-cloth-block: BLUE_WOOL
+      health:
+        max: 220
+        damage-per-hit: 5
+        damage-per-hit-creative: 25
+        repair-per-shift-right-click: 2
+        repair-cooldown-ms: 800
+        repair-range: 2
+
+      hit-sound:
+        enabled: true
+        sound: BLOCK_ANVIL_HIT
+        volume: 1.8
+        pitch: 0.9
+        radius: 5
+
+      model:
+        summon-command: |-
+          /summon block_display ~-0.5 ~0.5 ~-0.5 {Passengers:[{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1117376001,-1593019075,-2034313782,511023987],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;779855096,300929530,-1512540620,193431679],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0.625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1101383347,-497705846,786873370,73536145],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,0.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-719077212,-726210302,446636854,-1456967218],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.125f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-615170884,-28254592,-402571110,-139034429],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODg2MjEyOCwKICAicHJvZmlsZUlkIiA6ICIyNWIyMGEwZGI3MTA0NGZjODBmZjk5YjlkM2ZmNzM4MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbGl0YW41M1lUIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMwNDlkODFjMWNhMzBlZmU2NmJhZmM2YjBhZWJkZTk3NzdhYzVjNzY1NmY0NDcyZjk3ZDc2ZDJjN2U5Y2MzZDIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;291304770,-1625256872,-763484232,317111231],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,1.5625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-995472057,1997067848,914765322,501716408],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTc0MTU0MTM0NDY5OSwKICAicHJvZmlsZUlkIiA6ICJkZjM1MjcwM2MxMzI0MjYwYjQ1NGQ3ODI3MjU5YjVhOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMdW5jaGVyMTU1IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkZGEzNDdiNThjZjVjZTc1MjAzOTI5MzU3ZThlNWQ1MDAyNDg5NjY4YWQ1MTg5NjBkYzVlMTRmYmExMWY3NDciLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="}]}}},item_display:"none",transformation:[1.406087176f,0.2988730556f,0f,0.94f,-0.2988730556f,1.406087176f,0f,1.56f,0f,0f,0.0011f,0.5f,0f,0f,0f,1f],width:3,height:3.5}]}
+
+    yellow:
+      item-banner: YELLOW_BANNER
+      fallback-cloth-block: YELLOW_WOOL
+      health:
+        max: 210
+        damage-per-hit: 5
+        damage-per-hit-creative: 25
+        repair-per-shift-right-click: 2
+        repair-cooldown-ms: 800
+        repair-range: 2
+
+      hit-sound:
+        enabled: true
+        sound: BLOCK_ANVIL_HIT
+        volume: 1.8
+        pitch: 0.9
+        radius: 5
+
+      model:
+        summon-command: |-
+          /summon block_display ~-0.5 ~0.5 ~-0.5 {Passengers:[{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1634231325,2114655845,-1844170214,-92084435],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-1433517082,-895506855,-828620707,-339528481],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,0.625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;947361695,332147436,-1548252144,705028148],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,0.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1214583589,712323716,991206834,-195185974],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODkxODY2MSwKICAicHJvZmlsZUlkIiA6ICIzY2I3YTA3YWY3ZjM0ZWZiYTlkNGI4ODQ3NDM4Mzc0ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBUkJVWklLMTIwMTMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZGYyMDQyM2QxZTJiYjcyZDdiMTQwNjFkZmIwMzBmZDM3NDQxYTVlNTY2ZjZkMDg2Yjg4NmYyODA1ZWNiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.125f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-1784007654,-1951649146,-460921099,-473523687],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxODg2MjEyOCwKICAicHJvZmlsZUlkIiA6ICIyNWIyMGEwZGI3MTA0NGZjODBmZjk5YjlkM2ZmNzM4MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbGl0YW41M1lUIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMwNDlkODFjMWNhMzBlZmU2NmJhZmM2YjBhZWJkZTk3NzdhYzVjNzY1NmY0NDcyZjk3ZDc2ZDJjN2U5Y2MzZDIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="}]}}},item_display:"none",transformation:[0.25f,0f,0f,0.5f,0f,1f,0f,1.625f,0f,0f,0.25f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;1077088755,-1669105626,659116791,188756577],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTczNzkxMTk3MzkxOSwKICAicHJvZmlsZUlkIiA6ICI4NzczZWRiODZmYWQ0MTczOGFiYWJhNTUxMWM3MDcwZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJjb3NtaWNwb3RhdG9lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mMmUyMDk3YTM3YTg0Yzk1YmUxMjVlY2VmOTZhNDQ2ZDk2ZmQ2NWM0NzM3YTlkMTdkNWMzZTZkN2MwZTUxNTE5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="}]}}},item_display:"none",transformation:[0f,0f,-0.5f,0.5f,0f,-0.25f,0f,1.5625f,-0.5f,0f,0f,0.5f,0f,0f,0f,1f],width:3,height:3.5},{id:"minecraft:item_display",item:{id:"minecraft:player_head",Count:1,components:{"minecraft:profile":{id:[I;-1436371047,-1211513198,495578880,1514584288],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTc0MTU0MTEzODk0NCwKICAicHJvZmlsZUlkIiA6ICI1NjExYmE1MjFmNDM0OWYwOWE0MTI5ZTM0NjQzMDM1OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJHdXlOYW1lZEthaW5lIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIwZTM2ODdkZDcwZjE5Yzg0OWE0MWY3NThiN2ZjOGExNmNhMjRmMTcxMjZiYzU0MzEzMjFmZWJjMjZhNTExYzEiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="}]}}},item_display:"none",transformation:[1.406087176f,0.2988730556f,0f,0.94f,-0.2988730556f,1.406087176f,0f,1.56f,0f,0f,0.0011f,0.5f,0f,0f,0f,1f],width:3,height:3.5}]}
+
+  # Пример альтернативного (не summon) формата. Закомментировано.
+  # colors:
+  #   pink:
+  #     item-banner: PINK_BANNER
+  #     fallback-cloth-block: PINK_WOOL
+  #     health:
+  #       max: 220
+  #       damage-per-hit: 5
+  #       damage-per-hit-creative: 25
+  #       repair-per-shift-right-click: 2
+  #       repair-cooldown-ms: 800
+  #       repair-range: 2
+  #     model:
+  #       summon-command: ""
+  #       parts:
+  #         pole:
+  #           block: DARK_OAK_FENCE
+  #           translation: [0.5, 0.0, 0.5]
+  #           scale: [0.18, 2.0, 0.18]
+  #         cloth_main:
+  #           block: PINK_WOOL
+  #           translation: [0.95, 1.10, 0.5]
+  #           scale: [0.10, 0.75, 1.10]
+  #         cloth_top:
+  #           block: PINK_WOOL
+  #           translation: [0.95, 1.45, 0.5]
+  #           scale: [0.10, 0.45, 0.85]
+  #         finial:
+  #           block: PINK_CONCRETE
+  #           translation: [0.5, 2.05, 0.5]
+  #           scale: [0.22, 0.22, 0.22]
+
+

@@ -1,0 +1,17 @@
+crafts:
+  enabled: true
+
+  flags:
+    universal:
+      enabled: true
+      mode: universal
+      permission: ortuscapture.craft.flag
+      amount: 1
+      shape:
+        - " G "
+        - " B "
+        - " S "
+      ingredients:
+        G: GOLD_NUGGET
+        B: WHITE_BANNER
+        S: STICK

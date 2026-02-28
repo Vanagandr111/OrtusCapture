@@ -1,0 +1,203 @@
+# ===================== Общие ограничения =====================
+
+# Максимальное количество спец-регионов (шахта/ферма/форт/аутпост),
+# которыми один игрок может владеть одновременно.
+max-regions-per-player: 3
+
+# Разрешённые типы регионов для команд /oc setup и /oc create.
+# Если добавляете новый тип, не забудьте:
+# - добавить его в flags.yml (colors/types),
+# - добавить крафт (если нужен) в crafts.yml,
+# - добавить локализацию/GUI при необходимости.
+region-types:
+  - mine
+  - farm
+  - fort
+  - outpost
+
+# ===================== Механика захвата =====================
+
+# Режим захвата:
+# TIME   - удержание по времени
+# POINTS - набор очков (например, за убийства защитников)
+capture-mode: TIME
+
+# Базовая длительность захвата в секундах для режима TIME.
+# 600 сек = 10 минут.
+capture-duration-seconds: 600
+
+# Переопределение длительности захвата по типам регионов (секунды).
+# Если для типа значения нет, используется capture-duration-seconds.
+capture-duration-seconds-by-type:
+  mine: 600
+  farm: 480
+  fort: 900
+  outpost: 420
+
+# Базовая цель по очкам для режима POINTS.
+capture-points-required: 100
+
+# Переопределение цели по очкам по типам регионов.
+# Если для типа значения нет, используется capture-points-required.
+capture-points-required-by-type:
+  mine: 100
+  farm: 80
+  fort: 140
+  outpost: 90
+
+# Сколько очков даётся за убийство защитника в режиме POINTS.
+capture-points-per-kill: 10
+
+# Для режима TIME:
+# если в регионе есть защитники с доступом, таймер ставится на паузу.
+pause-time-capture-while-defenders-present: true
+
+# ===================== UI / Уведомления =====================
+
+ui:
+  title:
+    # Title-уведомления при старте/успехе/провале захвата.
+    enabled: true
+    fade-in: 10
+    stay: 40
+    fade-out: 10
+  actionbar:
+    # ActionBar (HP флага, ремонт, прогресс и т.п.)
+    enabled: true
+
+# ===================== Звуки =====================
+
+sounds:
+  capture-start:
+    enabled: true
+    # Громкий звук начала захвата (горн рейда)
+    name: "EVENT_RAID_HORN"
+    volume: 2.4
+    pitch: 1.0
+
+  capture-success:
+    enabled: true
+    name: "UI_TOAST_CHALLENGE_COMPLETE"
+    volume: 1.0
+    pitch: 1.0
+
+  capture-fail:
+    enabled: true
+    # Перенесён старый звук старта на провал (вместо жителя)
+    name: "BLOCK_BEACON_ACTIVATE"
+    volume: 1.0
+    pitch: 0.9
+
+  wars-start-horn:
+    # Локальный звук начала войны Lands (радиус вокруг события).
+    enabled: true
+    name: "EVENT_RAID_HORN"
+    volume: 2.0
+    pitch: 1.0
+    radius: 80
+
+# ===================== Локальные объявления =====================
+
+notifications:
+  local-capture-start:
+    # Локальное объявление в чат при старте захвата.
+    # Видят только игроки в радиусе (в том же мире).
+    enabled: true
+    radius: 100
+
+# ===================== Эффекты =====================
+
+effects:
+  capture-success-fireworks:
+    # Фейерверки при успешном захвате.
+    enabled: true
+    count: 3
+    # Сила полёта фейерверка (0..4 обычно достаточно)
+    power: 1
+
+# ===================== Lands role: captor =====================
+
+captor-role:
+  auto-add-role-command:
+    # Автоматически создать роль captor (если её нет) через консоль.
+    enabled: true
+    command: "lands admin land {land_ulid} addrole captor confirm"
+
+  # Команда назначения роли captor захватчику после успешного захвата.
+  set-role-command: "lands admin land {land_ulid} setrole {player} captor"
+
+  # Дополнительные консольные команды после выдачи роли.
+  # Поддерживаются плейсхолдеры:
+  # {player}, {player_uuid}, {region_id}, {land_ulid}, {land_name}, {region_type}
+  extra-console-commands: []
+
+  # Примеры (зависят от версии / синтаксиса Lands):
+  # extra-console-commands:
+  #   - "lands admin land {land_ulid} setrole {player} captor"
+  #   - "say [OrtusCapture] captor role applied to {player} in {region_id}"
+
+# ===================== Синхронизация capture-флага Lands =====================
+
+lands-capture-flag:
+  # Если true, OrtusCapture будет синхронизировать флаг Lands при:
+  # /oc setup, /oc create, /oc capture <id> on/off
+  enabled: true
+
+  # Внутренний ID флага Lands (НЕ отображаемое имя).
+  # Примеры: capture, war_manage и т.п. (зависит от вашей конфигурации Lands).
+  flag-name: "capture"
+
+  # Команды синхронизации (рекомендуется использовать ULID).
+  set-true-command: "lands admin land {land_ulid} setflag {capture_flag} true"
+  set-false-command: "lands admin land {land_ulid} setflag {capture_flag} false"
+
+  # Если хотите использовать имя земли вместо ULID:
+  # "lands admin land {land_name} setflag {capture_flag} true"
+  # "lands admin land {land_name} setflag {capture_flag} false"
+
+# ===================== Системный владелец / кулдауны =====================
+
+# Имя системного владельца земель в Lands (служебные/ничейные земли).
+system-owner-name: "Wild_land"
+
+# Кулдаун между захватами одного и того же региона (в часах).
+region-cooldown-hours: 24
+
+# ===================== Расписание захватов (allowed-days) =====================
+
+# Ограничение по дням недели для старта захватов.
+# Пусто (или пустой список) = без ограничений, захват можно начать в любой день.
+#
+# ВАЖНО:
+# - /oc status использует ЭТУ ЖЕ ЛОГИКУ парсинга, что и реальная проверка при установке флага.
+# - Значения указываются на английском (регистр не важен).
+#
+# Поддерживаемые дни недели:
+#   MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+#
+# Поддерживаемые групповые слова:
+#   weekdays  -> MONDAY..FRIDAY
+#   weekends  -> SATURDAY + SUNDAY
+# Также работают формы:
+#   weekday, weekend
+#
+# Можно задавать ТРЕМЯ способами:
+# 1) YAML-списком (рекомендуется):
+#    allowed-days:
+#      - SATURDAY
+#      - SUNDAY
+#
+# 2) Одной строкой через запятую:
+#    allowed-days: "SATURDAY, SUNDAY"
+#
+# 3) Смешанно (в том числе группы + конкретные дни):
+#    allowed-days: "weekdays, SATURDAY"
+#    allowed-days:
+#      - weekends
+#      - MONDAY
+#
+# Если укажете неизвестные значения, они будут проигнорированы.
+# Если ВСЕ значения неизвестные/пустые, ограничение считаться не будет.
+allowed-days:
+  - SATURDAY
+  - SUNDAY

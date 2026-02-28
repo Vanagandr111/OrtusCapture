@@ -1,0 +1,21 @@
+name: OrtusCapture
+version: '1.0.0'
+main: me.azzimov.ortuscapture.OrtusCapture
+api-version: '1.21'
+softdepend:
+  - Lands
+  - PlaceholderAPI
+commands:
+  oc:
+    description: OrtusCapture command
+    usage: "/oc help"
+permissions:
+  ortuscapture.admin:
+    description: Full access to OrtusCapture admin commands
+    default: op
+  ortuscapture.player:
+    description: Access to player OrtusCapture commands
+    default: true
+  ortuscapture.craft.flag:
+    description: Allows crafting universal capture flag
+    default: op
